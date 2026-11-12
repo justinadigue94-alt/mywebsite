@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Earth | Environmental Awareness</title>
+
+<style>
+
+/* GENERAL STYLE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f1;
+    color: #263d2b;
+    line-height: 1.6;
+}
+
+/* NAVIGATION BAR */
+header {
+    background: #174b32;
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a8e6a0;
+}
+
+/* HOME SECTION */
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    background:
+    linear-gradient(rgba(10,50,25,0.65),
+    rgba(10,50,25,0.65)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600")
+    center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #a8d88b;
+    color: #174b32;
+    padding: 13px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* ABOUT SECTION */
+.about {
+    text-align: center;
+    padding: 80px 12%;
+    background: white;
+}
+
+h2 {
+    color: #205c38;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 850px;
+    margin: auto;
+    color: #59685b;
+    font-size: 17px;
+}
+
+/* ENVIRONMENTAL ISSUES */
+.issues {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.subtitle {
+    color: #68786a;
+    margin-bottom: 35px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card span {
+    font-size: 50px;
+}
+
+.card h3 {
+    color: #205c38;
+    margin: 15px 0;
+}
+
+/* SOLUTIONS */
+.solutions {
+    background: #e4efdf;
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.solution-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.solution-item {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.solution-item:hover {
+    background: #d0e7c8;
+    transform: translateY(-5px);
+}
+
+.solution-item span {
+    font-size: 40px;
+}
+
+.solution-item h3 {
+    color: #205c38;
+    margin: 12px 0;
+}
+
+/* IMPORTANCE SECTION */
+.importance {
+    padding: 75px 10%;
+    text-align: center;
+    background: white;
+}
+
+.importance p {
+    max-width: 850px;
+    margin: auto;
+    color: #59685b;
+}
+
+/* CALL TO ACTION */
+.cta {
+    background: #205c38;
+    color: white;
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.cta h2 {
+    color: white;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 70px 10%;
+    background: #f4f8f1;
+}
+
+.contact p {
+    margin: 12px;
+}
+
+/* FOOTER */
+footer {
+    background: #123d29;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solution-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .card-container,
+    .solution-container {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="navbar">
+        <div class="logo">🌿 GREEN EARTH</div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#issues">Issues</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Protect Nature,<br>Preserve Our Future.</h1>
+
+        <p>
+            Our planet is our only home. Let us protect the environment,
+            reduce pollution, save natural resources, and create a
+            cleaner and greener world for future generations.
+        </p>
+
+        <a href="#about" class="btn">Discover More</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>About Environmental Awareness</h2>
+
+    <p>
+        Environmental awareness is about understanding the importance
+        of protecting our surroundings and natural resources.
+        It encourages everyone to take responsibility for the planet
+        by reducing waste, conserving energy, planting trees,
+        and protecting wildlife. Every small action can make
+        a meaningful difference.
+    </p>
+</section>
+
+<!-- ENVIRONMENTAL ISSUES -->
+<section class="issues" id="issues">
+    <h2>Environmental Issues</h2>
+
+    <p class="subtitle">
+        These are some of the major problems affecting our planet.
+    </p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <span>🌫️</span>
+            <h3>Air Pollution</h3>
+            <p>
+                Smoke from vehicles, factories, and burning waste
+                pollutes the air and affects human health.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>🌊</span>
+            <h3>Water Pollution</h3>
+            <p>
+                Plastic, chemicals, and garbage contaminate
+                rivers, lakes, and oceans.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>🌳</span>
+            <h3>Deforestation</h3>
+            <p>
+                Cutting down trees destroys wildlife habitats
+                and contributes to climate change.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions" id="solutions">
+    <h2>How Can We Save the Environment?</h2>
+
+    <p class="subtitle">
+        Start with simple habits that help protect our planet.
+    </p>
+
+    <div class="solution-container">
+
+        <div class="solution-item">
+            <span>♻️</span>
+            <h3>Recycle</h3>
+            <p>
+                Separate waste, reuse materials, and reduce
+                unnecessary plastic.
+            </p>
+        </div>
+
+        <div class="solution-item">
+            <span>🌱</span>
+            <h3>Plant Trees</h3>
+            <p>
+                Plant trees and protect forests to support
+                a healthier environment.
+            </p>
+        </div>
+
+        <div class="solution-item">
+            <span>💧</span>
+            <h3>Save Water</h3>
+            <p>
+                Turn off faucets when not in use and avoid
+                wasting clean water.
+            </p>
+        </div>
+
+        <div class="solution-item">
+            <span>⚡</span>
+            <h3>Save Energy</h3>
+            <p>
+                Switch off lights and appliances when
+                they are not needed.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- IMPORTANCE -->
+<section class="importance">
+    <h2>Why Protect Our Environment?</h2>
+
+    <p>
+        Protecting the environment means protecting life.
+        Clean air, safe water, healthy forests, and a balanced
+        ecosystem are essential for humans, animals, and plants.
+        By practicing sustainability, we can help ensure that
+        future generations will enjoy a healthy and beautiful planet.
+    </p>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+    <h2>Be Part of the Change!</h2>
+
+    <p>
+        The future of our planet depends on the choices we make today.
+        Start taking action and inspire others to do the same.
+    </p>
+
+    <a href="#contact" class="btn">Join the Movement</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Get Involved</h2>
+
+    <p>🌍 Together, we can create a greener tomorrow.</p>
+    <p>📧 Email: greenearth@example.com</p>
+    <p>🌿 Protect Nature. Preserve Life.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 GREEN EARTH | Environmental Awareness</p>
+    <p>Making the world a better place, one action at a time. 🌱</p>
+</footer>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Earth | Environmental Awareness</title>
+
+<style>
+
+/* GENERAL STYLE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f1;
+    color: #263d2b;
+    line-height: 1.6;
+}
+
+/* NAVIGATION BAR */
+header {
+    background: #174b32;
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a8e6a0;
+}
+
+/* HOME SECTION */
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    background:
+    linear-gradient(rgba(10,50,25,0.65),
+    rgba(10,50,25,0.65)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600")
+    center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #a8d88b;
+    color: #174b32;
+    padding: 13px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* ABOUT SECTION */
+.about {
+    text-align: center;
+    padding: 80px 12%;
+    background: white;
+}
+
+h2 {
+    color: #205c38;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 850px;
+    margin: auto;
+    color: #59685b;
+    font-size: 17px;
+}
+
+/* ENVIRONMENTAL ISSUES */
+.issues {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.subtitle {
+    color: #68786a;
+    margin-bottom: 35px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card span {
+    font-size: 50px;
+}
+
+.card h3 {
+    color: #205c38;
+    margin: 15px 0;
+}
+
+/* SOLUTIONS */
+.solutions {
+    background: #e4efdf;
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.solution-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.solution-item {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.solution-item:hover {
+    background: #d0e7c8;
+    transform: translateY(-5px);
+}
+
+.solution-item span {
+    font-size: 40px;
+}
+
+.solution-item h3 {
+    color: #205c38;
+    margin: 12px 0;
+}
+
+/* IMPORTANCE SECTION */
+.importance {
+    padding: 75px 10%;
+    text-align: center;
+    background: white;
+}
+
+.importance p {
+    max-width: 850px;
+    margin: auto;
+    color: #59685b;
+}
+
+/* CALL TO ACTION */
+.cta {
+    background: #205c38;
+    color: white;
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.cta h2 {
+    color: white;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 70px 10%;
+    background: #f4f8f1;
+}
+
+.contact p {
+    margin: 12px;
+}
+
+/* FOOTER */
+footer {
+    background: #123d29;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solution-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .card-container,
+    .solution-container {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="navbar">
+        <div class="logo">🌿 GREEN EARTH</div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#issues">Issues</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Protect Nature,<br>Preserve Our Future.</h1>
+
+        <p>
+            Our planet is our only home. Let us protect the environment,
+            reduce pollution, save natural resources, and create a
+            cleaner and greener world for future generations.
+        </p>
+
+        <a href="#about" class="btn">Discover More</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>About Environmental Awareness</h2>
+
+    <p>
+        Environmental awareness is about understanding the importance
+        of protecting our surroundings and natural resources.
+        It encourages everyone to take responsibility for the planet
+        by reducing waste, conserving energy, planting trees,
+        and protecting wildlife. Every small action can make
+        a meaningful difference.
+    </p>
+</section>
+
+<!-- ENVIRONMENTAL ISSUES -->
+<section class="issues" id="issues">
+    <h2>Environmental Issues</h2>
+
+    <p class="subtitle">
+        These are some of the major problems affecting our planet.
+    </p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <span>🌫️</span>
+            <h3>Air Pollution</h3>
+            <p>
+                Smoke from vehicles, factories, and burning waste
+                pollutes the air and affects human health.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>🌊</span>
+            <h3>Water Pollution</h3>
+            <p>
+                Plastic, chemicals, and garbage contaminate
+                rivers, lakes, and oceans.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>🌳</span>
+            <h3>Deforestation</h3>
+            <p>
+                Cutting down trees destroys wildlife habitats
+                and contributes to climate change.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions" id="solutions">
+    <h2>How Can We Save the Environment?</h2>
+
+    <p class="subtitle">
+        Start with simple habits that help protect our planet.
+    </p>
+
+    <div class="solution-container">
+
+        <div class="solution-item">
+            <span>♻️</span>
+            <h3>Recycle</h3>
+            <p>
+                Separate waste, reuse materials, and reduce
+                unnecessary plastic.
+            </p>
+        </div>
+
+        <div class="solution-item">
+            <span>🌱</span>
+            <h3>Plant Trees</h3>
+            <p>
+                Plant trees and protect forests to support
+                a healthier environment.
+            </p>
+        </div>
+
+        <div class="solution-item">
+            <span>💧</span>
+            <h3>Save Water</h3>
+            <p>
+                Turn off faucets when not in use and avoid
+                wasting clean water.
+            </p>
+        </div>
+
+        <div class="solution-item">
+            <span>⚡</span>
+            <h3>Save Energy</h3>
+            <p>
+                Switch off lights and appliances when
+                they are not needed.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- IMPORTANCE -->
+<section class="importance">
+    <h2>Why Protect Our Environment?</h2>
+
+    <p>
+        Protecting the environment means protecting life.
+        Clean air, safe water, healthy forests, and a balanced
+        ecosystem are essential for humans, animals, and plants.
+        By practicing sustainability, we can help ensure that
+        future generations will enjoy a healthy and beautiful planet.
+    </p>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+    <h2>Be Part of the Change!</h2>
+
+    <p>
+        The future of our planet depends on the choices we make today.
+        Start taking action and inspire others to do the same.
+    </p>
+
+    <a href="#contact" class="btn">Join the Movement</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Get Involved</h2>
+
+    <p>🌍 Together, we can create a greener tomorrow.</p>
+    <p>📧 Email: greenearth@example.com</p>
+    <p>🌿 Protect Nature. Preserve Life.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 GREEN EARTH | Environmental Awareness</p>
+    <p>Making the world a better place, one action at a time. 🌱</p>
+</footer>
+
+</body>
+</html>
